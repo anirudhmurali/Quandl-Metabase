@@ -1,7 +1,7 @@
 description: A quickstart showcasing data visualization with Metabase using the datasets
   from Quandl's Timeseries datasets.
 gitUrl: https://hasura.io/hub/project/anirudhm/quandl-metabase-time-series
-keywords: datascience, metabase, quandl, nodejs, node, express
+keywords: data science, metabase, quandl, nodejs, express
 media:
   images:
   - https://raw.githubusercontent.com/anirudhmurali/Quandl-Metabase/master/metabase5.png
