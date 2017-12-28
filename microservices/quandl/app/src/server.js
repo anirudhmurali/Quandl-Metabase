@@ -27,10 +27,10 @@ app.get('/', function (req, res) {
  *
  */
 app.post('/add_data', function (req, res) {
-	const quandlCode = req.body.quandl_code;
+	var quandlCode = req.body.quandl_code;
 	quandlCode = quandlCode.split("/");
-    const vendorCode = quandlCode[0];
-    const datatableCode = quandlCode[1];
+    var vendorCode = quandlCode[0];
+    var datatableCode = quandlCode[1];
 
 
 	quandl.fetchMetadata(config.getQuandlMetadataUrl(vendorCode, datatableCode), function(error, responseJSON) {
