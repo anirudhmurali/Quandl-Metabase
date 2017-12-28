@@ -43,7 +43,7 @@ $ git --version
 
 ```sh
 $ # Run the quickstart command to get the project
-$ hasura quickstart anirudhmurali/quandl-metabase-time-series
+$ hasura quickstart anirudhm/quandl-metabase-time-series
 
 $ # Navigate into the Project
 $ cd quandl-metabase-time-series
