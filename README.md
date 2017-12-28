@@ -147,8 +147,7 @@ Let's use our `quandl` service to insert some data. To do this:
 POST https://quandl.<CLUSTER-NAME>.hasura-app.io/add_data // remember to replace <CLUSTER-NAME> with your own cluster name (In this case, http://quandl.boomerang68.hasura-app.io/add_data)
 
 {
-    "vendor_code": "LBMA",
-    "datatable_code": "GOLD"
+    "quandl_code": "LBMA/GOLD"
 }
 ```
 
