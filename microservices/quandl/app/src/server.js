@@ -37,9 +37,9 @@ app.post('/add_data', function (req, res) {
 	  if (error) {
 	      res.status(401).json({'error': 'Could not fetch quandl metadata'});
 	  } else {
-	  	  hasura.createHasuraTable(utils.getTableName(vendorCode, datatableCode), responseJSON.dataset.column_names, responseJSON.dataset.column_names[0], function(error, response) {
+	  	  hasura.createHasuraTable(utils.getTableName(vendorCode, datatableCode), responseJSON.dataset.column_names, responseJSON.dataset.column_names[0], function(error, isExist, response) {
 	          if (error) {
-	              res.status(401).json({'error': 'Could not create hasura table'});
+	          		(isExist == 0)?res.status(401).json({'error': 'Could not create hasura table'}):res.status(401).json({'Table exists already.'});
 	          } else {
 	              hasura.insertDataToTable('quandl_checkpoint', [{ vendor_code: vendorCode, datatable_code: datatableCode }], function(error, response) {
 	                  if (error) {

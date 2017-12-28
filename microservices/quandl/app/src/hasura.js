@@ -81,7 +81,12 @@ function createHasuraTable(tableName, columns, primaryKey, callback) {
         if (error) {
             console.log('Creating table failed');
             console.log(error);
-            callback(error, null);
+            if(error.internal.message.contains("already exists")) {
+                callback(error, 1, null);
+            }
+            else {
+                callback(error, 0, null);
+            }
         } else {
             //Successful
             console.log('Creating table successful');
